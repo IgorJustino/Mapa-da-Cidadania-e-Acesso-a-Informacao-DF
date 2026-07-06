@@ -23,7 +23,9 @@ IPYTHONDIR="$(pwd)/.ipython" \
 .venv/bin/jupyter lab --no-browser
 ```
 
-Depois abra `Data Layer/raw/analytics.ipynb` e selecione o kernel `Mapa Cidadania (.venv)`.
+Depois abra `Transformer/analytics_raw.ipynb` e selecione o kernel `Mapa Cidadania (.venv)`.
+
+Também existe uma cópia em `Data Layer/raw/analytics.ipynb` para manter compatibilidade com a organização inicial. A camada RAW deve preservar os arquivos originais; regras de limpeza e padronização entram a partir da Silver.
 
 ## Validacao por linha de comando
 
@@ -34,5 +36,5 @@ JUPYTER_CONFIG_DIR="$(pwd)/.jupyter" \
 JUPYTER_DATA_DIR="$(pwd)/.jupyter/data" \
 JUPYTER_RUNTIME_DIR="$(pwd)/.jupyter/runtime" \
 IPYTHONDIR="$(pwd)/.ipython" \
-.venv/bin/jupyter nbconvert --to notebook --execute "Data Layer/raw/analytics.ipynb" --output "analytics.executed.ipynb" --ExecutePreprocessor.kernel_name=mapa-cidadania --ExecutePreprocessor.timeout=300
+.venv/bin/jupyter nbconvert --to notebook --execute "Transformer/analytics_raw.ipynb" --output "analytics_raw.executed.ipynb" --ExecutePreprocessor.kernel_name=mapa-cidadania --ExecutePreprocessor.timeout=300
 ```
