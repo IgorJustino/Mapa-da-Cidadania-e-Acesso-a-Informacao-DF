@@ -6,13 +6,13 @@ __pycache__/
 *.pyc
 .tokensave/
 .env
-Data Layer/raw/*.csv
-Data Layer/raw/*.xlsx
-Data Layer/raw/*.zip
-Data Layer/raw/*.parquet
-Data Layer/raw/*.executed.ipynb
+.Data Layer/raw/*.csv
+.Data Layer/raw/*.xlsx
+.Data Layer/raw/*.zip
+.Data Layer/raw/*.parquet
+.Data Layer/raw/*.executed.ipynb
 
-Data Layer/silver/*.csv
-Data Layer/silver/*.parquet
-Data Layer/gold/*.csv
-Data Layer/gold/*.parquet
+.Data Layer/silver/*.csv
+.Data Layer/silver/*.parquet
+.Data Layer/gold/*.csv
+.Data Layer/gold/*.parquet
