@@ -21,6 +21,17 @@ CREATE TABLE silver.tb_mapa_cidadania_ra_ano_silver (
     percentual_domicilios_proprios NUMERIC,
     percentual_domicilios_alugados NUMERIC,
 
+    lai_df_qtd_pedidos_ano NUMERIC,
+    lai_df_qtd_recursos_ano NUMERIC,
+    lai_df_qtd_satisfacoes_ano NUMERIC,
+    lai_df_taxa_recurso_ano NUMERIC,
+    lai_df_tempo_medio_resposta_dias NUMERIC,
+    lai_df_percentual_acesso_concedido NUMERIC,
+    lai_df_percentual_acesso_negado NUMERIC,
+    lai_df_percentual_acesso_parcial NUMERIC,
+    lai_df_percentual_sem_resposta NUMERIC,
+    lai_df_qtd_orgaos_demandados NUMERIC,
+
     CONSTRAINT pk_tb_mapa_cidadania_ra_ano_silver
         PRIMARY KEY (regiao_administrativa, ano)
 );
