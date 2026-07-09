@@ -67,7 +67,7 @@ SELECT DISTINCT
     lai_df_qtd_pedidos_ano,
     lai_df_qtd_recursos_ano,
     lai_df_qtd_satisfacoes_ano,
-    lai_df_taxa_recurso_ano,
+    lai_df_percentual_pedidos_com_recurso,
     lai_df_tempo_medio_resposta_dias,
     lai_df_percentual_acesso_concedido,
     lai_df_percentual_acesso_negado,
@@ -84,7 +84,7 @@ SELECT
     ano,
     COUNT(DISTINCT lai_df_qtd_pedidos_ano) AS variacoes_pedidos,
     COUNT(DISTINCT lai_df_qtd_recursos_ano) AS variacoes_recursos,
-    COUNT(DISTINCT lai_df_taxa_recurso_ano) AS variacoes_taxa_recurso,
+    COUNT(DISTINCT lai_df_percentual_pedidos_com_recurso) AS variacoes_percentual_pedidos_com_recurso,
     COUNT(DISTINCT lai_df_tempo_medio_resposta_dias) AS variacoes_tempo_resposta
 FROM silver.tb_mapa_cidadania_ra_ano_silver
 GROUP BY ano

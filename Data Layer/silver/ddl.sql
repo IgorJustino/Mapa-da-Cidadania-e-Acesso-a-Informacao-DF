@@ -25,6 +25,7 @@ CREATE TABLE silver.tb_mapa_cidadania_ra_ano_silver (
     -- IDENTIFICADORES E TEMPO
     ano INTEGER NOT NULL,
     regiao_administrativa VARCHAR(100) NOT NULL,
+    ano_referencia_pdad INTEGER NOT NULL,
 
     -- INDICADORES POPULACIONAIS
     populacao_total NUMERIC(18,2),
@@ -47,7 +48,7 @@ CREATE TABLE silver.tb_mapa_cidadania_ra_ano_silver (
     lai_df_qtd_pedidos_ano NUMERIC(18,2),
     lai_df_qtd_recursos_ano NUMERIC(18,2),
     lai_df_qtd_satisfacoes_ano NUMERIC(18,2),
-    lai_df_taxa_recurso_ano NUMERIC(18,6),
+    lai_df_percentual_pedidos_com_recurso NUMERIC(10,6),
     lai_df_tempo_medio_resposta_dias NUMERIC(18,6),
     lai_df_percentual_acesso_concedido NUMERIC(10,6),
     lai_df_percentual_acesso_negado NUMERIC(10,6),
