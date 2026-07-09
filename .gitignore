@@ -4,6 +4,9 @@
 __pycache__/
 .ipynb_checkpoints/
 *.pyc
+.coverage
+htmlcov/
+coverage.xml
 .tokensave/
 .env
 .Data Layer/raw/*.csv

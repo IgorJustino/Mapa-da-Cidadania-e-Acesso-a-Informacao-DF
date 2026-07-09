@@ -4,3 +4,5 @@ openpyxl
 matplotlib
 seaborn
 jupyter
+pytest
+pytest-cov
