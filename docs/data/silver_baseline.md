@@ -46,6 +46,7 @@ Utilizada no nível Distrito Federal + ano, sem territorialização artificial p
 A BigTable deve manter:
 
 - exatamente 33 RAs;
+- lista nominal exata de 33 RAs, com nomes canônicos legíveis;
 - exatamente 99 combinações RA + ano enquanto o período permanecer 2023–2025;
 - exatamente 26 colunas enquanto o contrato atual permanecer válido;
 - nenhuma duplicidade na chave lógica;

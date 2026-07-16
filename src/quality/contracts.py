@@ -28,6 +28,43 @@ SILVER_COLUMNS = [
 ]
 
 
+REGIOES_ADMINISTRATIVAS_ESPERADAS = {
+    "Arniqueira",
+    "Brazlândia",
+    "Candangolândia",
+    "Ceilândia",
+    "Cruzeiro",
+    "Fercal",
+    "Gama",
+    "Guará",
+    "Itapoã",
+    "Jardim Botânico",
+    "Lago Norte",
+    "Lago Sul",
+    "Núcleo Bandeirante",
+    "Paranoá",
+    "Park Way",
+    "Planaltina",
+    "Plano Piloto",
+    "Recanto das Emas",
+    "Riacho Fundo",
+    "Riacho Fundo II",
+    "SCIA",
+    "SIA",
+    "Samambaia",
+    "Santa Maria",
+    "Sobradinho",
+    "Sobradinho II",
+    "Sol Nascente/Pôr do Sol",
+    "Sudoeste e Octogonal",
+    "São Sebastião",
+    "Taguatinga",
+    "Varjão",
+    "Vicente Pires",
+    "Águas Claras",
+}
+
+
 SILVER_CONTRACT = {
     "quantidade_ras": 33,
     "anos_esperados": {2023, 2024, 2025},

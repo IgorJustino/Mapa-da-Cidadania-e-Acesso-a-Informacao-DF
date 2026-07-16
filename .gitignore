@@ -17,5 +17,5 @@ coverage.xml
 
 .Data Layer/silver/*.csv
 .Data Layer/silver/*.parquet
-.Data Layer/gold/*.csv
-.Data Layer/gold/*.parquet
+Data Layer/gold/*.csv
+Data Layer/gold/*.parquet

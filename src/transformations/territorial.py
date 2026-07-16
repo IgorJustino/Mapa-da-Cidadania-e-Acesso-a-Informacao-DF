@@ -7,8 +7,8 @@ import pandas as pd
 ALIASES_REGIAO_ADMINISTRATIVA = {
     "sudoeste octogonal": "Sudoeste e Octogonal",
     "sudoeste e octogonal": "Sudoeste e Octogonal",
-    "sol nascente por do sol": "Sol Nascente/Por do Sol",
-    "sol nascente por-do-sol": "Sol Nascente/Por do Sol",
+    "sol nascente por do sol": "Sol Nascente/Pôr do Sol",
+    "sol nascente por-do-sol": "Sol Nascente/Pôr do Sol",
 }
 
 

@@ -174,7 +174,10 @@ A PDAD-A 2024 é a fotografia socioeconômica de referência (`ano_referencia_pd
 LAI não tem RA confiável → **não** cruzar LAI × RA. Indicadores agregados em `DF + ano`, prefixo `lai_df_` (ver lista completa na Seção 8.1). Valores podem se repetir entre as 33 RAs de um mesmo ano porque representam contexto anual do DF, não medida territorial da RA.
 
 ### 9.3 Alias territorial
-`Sudoeste_Octogonal` (projeções) ↔ `Sudoeste e Octogonal` (PDAD) resolvido por alias explícito centralizado — sem algoritmos de resolução de entidades.
+Aliases territoriais conhecidos devem ser resolvidos de forma explícita e centralizada — sem algoritmos de resolução de entidades. A Silver e a futura `dim_regiao_administrativa` da Gold devem usar nomes canônicos legíveis, incluindo:
+
+- `Sudoeste_Octogonal` → `Sudoeste e Octogonal`
+- `Sol Nascente_Pôr do Sol` → `Sol Nascente/Pôr do Sol`
 
 ### 9.4 Percentuais ponderados da PDAD
 Valores ausentes são excluídos do denominador antes do cálculo. Protege: `percentual_baixa_escolaridade`, `percentual_domicilios_com_internet`, `percentual_domicilios_proprios`, `percentual_domicilios_alugados`.
@@ -342,6 +345,18 @@ A Silver já possui `ddl.sql`, `consultas.sql` e o CSV — etapa de baixo custo 
 Desenhada somente após o contrato mínimo da Silver estar protegido e o PostgreSQL operacional (ou claramente preparado). Pode conter: `dim_tempo`, `dim_regiao_administrativa`, `fato_mapa_cidadania`, `mart_indicadores_territoriais`, `mart_acesso_informacao`.
 
 Um índice composto (ex. `ITAC-DF`) só deve ser criado com metodologia justificável, respondendo: o que mede, por que cada variável participa, como são normalizadas, por que os pesos, como interpretar valores altos/baixos. Sem resposta sólida a essas perguntas, priorizar indicadores separados ou clusterização de RAs.
+
+### 21.1 Granularidade dos marts Gold
+
+`mart_indicadores_territoriais`: 1 linha = 1 Região Administrativa. Usa indicadores socioeconômicos da PDAD-A 2024 como fotografia territorial de referência, população de 2023 e 2025, crescimento populacional absoluto e percentual entre 2023 e 2025, e composição etária percentual de 2025.
+
+`mart_acesso_informacao`: 1 linha = Distrito Federal + ano. Consolida os indicadores anuais de LAI sem repetir os mesmos valores para as 33 RAs, eliminando a redundância necessária na Silver.
+
+### 21.2 Persistencia da Gold
+
+A camada Gold e representada por tabelas `gold.*` no PostgreSQL. O ETL Silver -> Gold deve construir os DataFrames em memoria e carregar diretamente o banco, sem salvar `dim_tempo.csv`, `fato_mapa_cidadania.csv`, `mart_*.csv` ou outros arquivos tabulares em `Data Layer/gold/`.
+
+`Data Layer/gold/consultas.sql` deve conter consultas analiticas de consumo da Gold. Validacoes tecnicas de qualidade e integridade pertencem a `scripts/validate_gold.sql`.
 
 ---
 

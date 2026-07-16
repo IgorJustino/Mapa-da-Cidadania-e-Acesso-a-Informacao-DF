@@ -24,8 +24,8 @@ def test_normalizar_sudoeste_octogonal(entrada, esperado):
 @pytest.mark.parametrize(
     "entrada, esperado",
     [
-        ("Sol Nascente_Pôr do Sol", "Sol Nascente/Por do Sol"),
-        ("sol nascente por do sol", "Sol Nascente/Por do Sol"),
+        ("Sol Nascente_Pôr do Sol", "Sol Nascente/Pôr do Sol"),
+        ("sol nascente por do sol", "Sol Nascente/Pôr do Sol"),
     ],
 )
 def test_alias_conhecido_retorna_nome_canonico(entrada, esperado):
@@ -49,7 +49,7 @@ def test_normalizacao_ignora_diferencas_de_caixa():
 def test_normalizacao_ignora_acentos_quando_aplicavel():
     assert (
         normalizar_regiao_administrativa("Sol Nascente_Por do Sol")
-        == "Sol Nascente/Por do Sol"
+        == "Sol Nascente/Pôr do Sol"
     )
 
 

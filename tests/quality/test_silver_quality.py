@@ -2,6 +2,7 @@ import pandas as pd
 
 from src.quality.contracts import (
     CAMPOS_CRITICOS,
+    REGIOES_ADMINISTRATIVAS_ESPERADAS,
     SILVER_COLUMNS,
     SILVER_CONTRACT,
 )
@@ -31,6 +32,12 @@ def test_silver_tem_33_ras(df_silver):
     assert quantidade_ras == SILVER_CONTRACT[
         "quantidade_ras"
     ]
+
+
+def test_silver_tem_lista_nominal_exata_de_ras(df_silver):
+    ras = set(df_silver["regiao_administrativa"].unique())
+
+    assert ras == REGIOES_ADMINISTRATIVAS_ESPERADAS
 
 
 def test_silver_tem_anos_esperados(df_silver):
